@@ -3,7 +3,29 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
+var modalDialogMsj=$('#modalDialogMsj').modal({
+	keyboard: false,
+	backdrop: true,
+	focus: true
+});
+function modal={
+	show: function(obj){
+		$.extend({
+			title: '¡Atencion!',
+			container: '',
+			buttonText: 'Aceptar',
+			fn: function(){}
+		},obj);
+		modalDialogMsj.find('#tituloModalDialogMsj').text(obj.title);
+		modalDialogMsj.find('#bodyModalDialogMsj').html(obj.container);
+		modalDialogMsj.find('#buttonModalDialogMsj').text(obj.buttonText);
+		modalDialogMsj.find('#buttonModalDialogMsj').off('click').on('click',obj.fn);
+		modalDialogMsj.modal('show');
+	},
+	hide: function(){
+		modalDialogMsj.modal('hide');	
+	}
+}
 function log(v=''){
 	console.log(v);
 }

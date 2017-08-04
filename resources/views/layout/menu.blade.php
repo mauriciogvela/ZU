@@ -95,8 +95,8 @@
                         <i class="fa fa-user"></i> <span class="hidden-sm-down">{{$user->nombre}}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Logout</a>
-                        <a class="dropdown-item" href="#">My account</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}">Cerrar sesi&oacute;n</a>
+                        <a class="dropdown-item" href="#">Mi perfil</a>
                     </div>
                 </li>
             </ul>
