@@ -8,22 +8,29 @@ var modalDialogMsj=$('#modalDialogMsj').modal({
 	backdrop: true,
 	focus: true
 });
-function modal={
-	show: function(obj){
-		$.extend({
+var alerta={
+	show: function(obj={}){
+		obj=$.extend({
 			title: '¡Atencion!',
 			container: '',
 			buttonText: 'Aceptar',
-			fn: function(){}
+			type: 'info',
+			fn: function(){
+				alerta.hide();
+			}
 		},obj);
-		modalDialogMsj.find('#tituloModalDialogMsj').text(obj.title);
-		modalDialogMsj.find('#bodyModalDialogMsj').html(obj.container);
-		modalDialogMsj.find('#buttonModalDialogMsj').text(obj.buttonText);
-		modalDialogMsj.find('#buttonModalDialogMsj').off('click').on('click',obj.fn);
-		modalDialogMsj.modal('show');
+		$('#tituloModalDialogMsj').text(obj.title);
+		$('#bodyModalDialogMsj').html(obj.container);
+		$('#buttonModalDialogMsj').text(obj.buttonText);
+		$('#buttonModalDialogMsj').removeClass('btn-success btn-warning btn-danger btn-info').addClass('btn-'+obj.type);
+		$('#modalDialogMsj').find('.modal-dialog').removeClass('modal-danger modal-success modal-warning modal-info').addClass('modal-'+obj.type)
+		$('#buttonModalDialogMsj').off('click').on('click',function(){
+			obj.fn();
+		});
+		$('#modalDialogMsj').modal('show');
 	},
 	hide: function(){
-		modalDialogMsj.modal('hide');	
+		$('#modalDialogMsj').modal('hide');	
 	}
 }
 function log(v=''){

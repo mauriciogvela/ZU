@@ -13,7 +13,7 @@
         min-height: 96px!important;
         max-height: 96px!important;
       }
-      .close{
+      .close-image{
             position: absolute;
             right: -8px;
             top: -8px;
@@ -31,7 +31,7 @@
 
 @section('content')
 <div class="row">
-  <form class="col-lg-12 col-md-12 col-sm-12 formularioProducto">
+  <form class="col-lg-12 col-md-12 col-sm-12" id="formularioProducto">
     <!-- Nav tabs -->
     <div class="tabs-wrapper"> 
       <ul class="nav classic-tabs tabs-primary" role="tablist">
@@ -64,11 +64,11 @@
             </p>
           </div>
           <div class="col-lg-6 md-form">
-            <input type="text" id="nombre" name="nombre" class="form-control"> 
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="&nbsp;"> 
             <label class="col-lg-12" for="nombre" data-error="Error">Nombre del producto</label>
           </div>
           <div class="col-lg-2 md-form">
-            <input type="text" id="codigo" name="codigo" class="form-control"> 
+            <input type="text" id="codigo" name="codigo" class="form-control" placeholder="&nbsp;"> 
             <label class="col-lg-12" for="codigo" data-error="Error">C&oacute;digo del producto</label>
           </div>
           <div class="col-lg-2 md-form">
@@ -86,23 +86,23 @@
             </fieldset>
           </div>
           <div class="col-lg-12 md-form">
-            <textarea type="text" id="descripcion" name="descripcion" class="md-textarea"></textarea>
+            <textarea type="text" id="descripcion" name="descripcion" class="md-textarea" placeholder="&nbsp;"></textarea>
             <label class="col-lg-12" for="descripcion" data-error="Error">Descripci&oacute;n</label>
           </div>
           <div class="col-lg-3 md-form">
-            <input type="number" id="existencia" name="existencia" class="form-control" min="0" value="0">
+            <input type="number" id="existencia" name="existencia" class="form-control" min="0" value="0" placeholder="&nbsp;">
             <label class="col-lg-12" class="active" for="existencia" data-error="Error">Existencia</label>
           </div>
           <div class="col-lg-3 md-form">
-            <input type="number" id="capacidad" name="capacidad" class="form-control" min="1" value="1"> 
+            <input type="number" id="capacidad" name="capacidad" class="form-control" min="1" value="1" placeholder="&nbsp;"> 
             <label class="col-lg-12" for="capacidad" data-error="Error">Capacidad del producto</label>
           </div>
           <div class="col-lg-3 md-form">
-            <input type="number" id="cantidadMinima" name="cantidadMinima" class="form-control" min="1" value="1"> 
+            <input type="number" id="cantidadMinima" name="cantidadMinima" class="form-control" min="1" value="1" placeholder="&nbsp;"> 
             <label class="col-lg-12" class="active" for="cantidadMinima" data-error="Error">Renta minima</label>
           </div>
           <div class="col-lg-3 md-form">
-            <input type="number" id="precioUnitario" name="precioUnitario" class="form-control" min="0" value="0"> 
+            <input type="number" id="precioUnitario" name="precioUnitario" class="form-control" min="0" value="0" placeholder="&nbsp;"> 
             <label class="col-lg-12" class="active" for="precioUnitario" data-error="Error">Precio unitario</label>
           </div>
         </div>
@@ -110,10 +110,10 @@
       <div class="tab-pane fade in" id="adicionalesProducto" role="tabpanel">
         <div class="col-lg-6 md-form">
           <textarea type="text" id="detalles" name="detalles" row="6" class="md-textarea" placeholder="Ej. Caracter&iacute;sticas t&eacute;cnicas que describan mejor al producto"></textarea>
-          <label class="col-lg-6" for="detalles" data-error="Error">Detalle adicional</label>
+          <label class="col-lg-6" for="detalles" data-error="Error">Especificaciones técnicas</label>
         </div>
         <div class="col-lg-6 md-form">
-          <textarea type="text" id="terminosCondiciones" name="terminosCondiciones" row="6" class="md-textarea" placeholder="T&eacute;rminos y condiciones del producto"></textarea>
+          <textarea type="text" id="terminosCondiciones" name="terminosCondiciones" row="6" class="md-textarea" placeholder="&nbsp;"></textarea>
           <label class="col-lg-12" for="terminosCondiciones" data-error="Error">Terminos y condiciones</label>
         </div>
       </div>

@@ -73,7 +73,7 @@
         
     <!-- Modal -->
     <div class="modal fade" id="modalDialogMsj" tabindex="-1" role="dialog" aria-labelledby="tituloModalDialogMsj" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-notify" role="document">
             <!--Content-->
             <div class="modal-content">
                 <!--Header-->

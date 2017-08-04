@@ -42,7 +42,7 @@ var cargarArchivo = function(evt) {
 						$('#listaImagenes').append(
 	                    	'<div class="img-producto col-2 center-on-small-only text-md-left">'+
 	                    		'<img class="img-thumbnail" src="'+data.Thumbnail+'" nombre="'+data.Nombre+'"/>'+
-	                    		'<button type="button" class="close jqEliminarImagen" aria-label="Close">'+
+	                    		'<button type="button" class="close close-image jqEliminarImagen" aria-label="Close">'+
                                     '<span aria-hidden="true">&times;</span>'+
                                 '</button>'+
 	                    	'</div>'
@@ -61,7 +61,7 @@ var cargarArchivo = function(evt) {
 var guardarProducto = function(that){
 	//var imagenes=[];
 	var datos={imagenes:[]};
-	$.each($('.formularioProducto').serializeArray(),function(i,c){
+	$.each($('#formularioProducto').serializeArray(),function(i,c){
 		datos[c.name]=c.value;
 	});
 	$.each($('.img-producto img').not('[save=1]'),function(i,v){
@@ -75,13 +75,28 @@ var guardarProducto = function(that){
 		fn: function(data){
 			if(data.Exito){
 				toastr.success(data.Msj, {positionClass: 'toast-bottom-right'});
-				/*if($(that).attr('id')==''){
-					cleanForm($('#container'),data.Campos);
-					window.history.pushState("", "", "../agregar");
-				}*/
+				alerta.show({
+					title: '¡Listo!',
+					type: 'success',
+					container: 'Tu producto ha sido agregado correctamente.',
+					buttonText: 'Aceptar',
+					fn: function(){
+						alerta.hide();
+						$(location).attr('href', $('.jqCancelar').attr('href'));
+					}
+				});
 			}else{
-				validateForm($('#container'), data);
-				toastr.warning("Revise los campos requeridos.", {positionClass: 'toast-bottom-right'});
+				alerta.show({
+					title: '¡Atención!',
+					container: 'Ocurrio un error en la validación.<br>Favor de revisar los datos.',
+					type: 'warning',
+					buttonText: 'Aceptar',
+					fn: function(){
+						log(data);
+						validateForm($('#formularioProducto'), data);
+						alerta.hide();
+					}
+				});
 			}
 		}
 	});	

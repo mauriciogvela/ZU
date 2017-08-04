@@ -73,7 +73,7 @@
 @endsection
 @section('scripts')
 <script type="text/javascript" src="{{ asset('js/app/productos/productos.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/plugins/Modals/js/enhanced-modals.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/Modals/enhanced-modals.min.js') }}"></script>
 @endsection
 {{-- Modal borrado inicio --}}
 <div class="modal fade" id="modalBorrado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
