@@ -11,7 +11,7 @@ var eliminarImagen = function(that){
 		fn: function(data){
 			if(data.Exito){
 				toastr.success(data.Msj, {positionClass: 'toast-bottom-right'});
-				$(that).parents('.img-producto').fadeOut('slow',function(){
+				$(that).parents('.img-upload').fadeOut('slow',function(){
 					$(this).remove();
 				});
 			}else{
@@ -40,7 +40,7 @@ var cargarArchivo = function(evt) {
 				fn: function(data){
 					if(data.Exito){
 						$('#listaImagenes').append(
-	                    	'<div class="img-producto col-2 center-on-small-only text-md-left">'+
+	                    	'<div class="img-upload col-2 center-on-small-only text-md-left">'+
 	                    		'<img class="img-thumbnail" src="'+data.Thumbnail+'" nombre="'+data.Nombre+'"/>'+
 	                    		'<button type="button" class="close close-image jqEliminarImagen" aria-label="Close">'+
                                     '<span aria-hidden="true">&times;</span>'+
@@ -64,7 +64,7 @@ var guardarProducto = function(that){
 	$.each($('#formularioProducto').serializeArray(),function(i,c){
 		datos[c.name]=c.value;
 	});
-	$.each($('.img-producto img').not('[save=1]'),function(i,v){
+	$.each($('.img-upload img').not('[save=1]'),function(i,v){
 		datos.imagenes[datos.imagenes.length]=$(this).attr('Nombre');
 	});
 	datos.visibilidad=($('#visibilidad').is('checked'))?1:0;

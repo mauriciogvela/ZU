@@ -31,22 +31,22 @@
 
 @section('content')
 <div class="row">
-  <form class="col-lg-12 col-md-12 col-sm-12" id="formularioProducto">
+  <form class="col-lg-12 col-md-12 col-sm-12" id="formularioServicio">
     <!-- Nav tabs -->
     <div class="tabs-wrapper"> 
       <ul class="nav classic-tabs tabs-primary" role="tablist">
         <li class="nav-item">
-          <a class="nav-link waves-light active" data-toggle="tab" href="#informacionProducto" role="tab">
+          <a class="nav-link waves-light active" data-toggle="tab" href="#informacionServicio" role="tab">
             <i class="fa fa-cube fa-3x" aria-hidden="true"></i><br> Información general
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" data-toggle="tab" href="#adicionalesProducto" role="tab">
+          <a class="nav-link waves-light" data-toggle="tab" href="#adicionalesServicio" role="tab">
             <i class="fa fa-gavel fa-3x" aria-hidden="true"></i><br> Detalles adicionales
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" data-toggle="tab" href="#multimediaProducto" role="tab">
+          <a class="nav-link waves-light" data-toggle="tab" href="#multimediaServicio" role="tab">
             <i class="fa fa-image fa-3x" aria-hidden="true"></i><br> Imagenes y video
           </a>
         </li>
@@ -54,22 +54,22 @@
     </div>
     <!-- Tab panels -->
     <div class="tab-content card">
-      <div class="tab-pane fade in show active" id="informacionProducto" role="tabpanel">
+      <div class="tab-pane fade in show active" id="informacionServicio" role="tabpanel">
         <div class="row">
           <div class="col-lg-12 text-left">
             <p>
               <small>
-                <i class="fa fa-certificate fa-2x orange-text" aria-hidden="true"></i> Producto pendiente de autorización ZU
+                <i class="fa fa-certificate fa-2x orange-text" aria-hidden="true"></i> Servicio pendiente de autorización ZU
               </small>
             </p>
           </div>
           <div class="col-lg-6 md-form">
             <input type="text" id="nombre" name="nombre" class="form-control" placeholder="&nbsp;"> 
-            <label class="col-lg-12" for="nombre" data-error="Error">Nombre del producto</label>
+            <label class="col-lg-12" for="nombre" data-error="Error">Nombre del servicio</label>
           </div>
           <div class="col-lg-2 md-form">
             <input type="text" id="codigo" name="codigo" class="form-control" placeholder="&nbsp;"> 
-            <label class="col-lg-12" for="codigo" data-error="Error">C&oacute;digo del producto</label>
+            <label class="col-lg-12" for="codigo" data-error="Error">C&oacute;digo del servicio</label>
           </div>
           <div class="col-lg-2 md-form">
             <select class="mdb-select" id="idCategoria" name="idCategoria">
@@ -95,7 +95,7 @@
           </div>
           <div class="col-lg-3 md-form">
             <input type="number" id="capacidad" name="capacidad" class="form-control" min="1" value="1" placeholder="&nbsp;"> 
-            <label class="col-lg-12" for="capacidad" data-error="Error">Capacidad del producto</label>
+            <label class="col-lg-12" for="capacidad" data-error="Error">Capacidad del servicio</label>
           </div>
           <div class="col-lg-3 md-form">
             <input type="number" id="cantidadMinima" name="cantidadMinima" class="form-control" min="1" value="1" placeholder="&nbsp;"> 
@@ -107,9 +107,9 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade in" id="adicionalesProducto" role="tabpanel">
+      <div class="tab-pane fade in" id="adicionalesServicio" role="tabpanel">
         <div class="col-lg-6 md-form">
-          <textarea type="text" id="detalles" name="detalles" row="6" class="md-textarea" placeholder="Ej. Caracter&iacute;sticas t&eacute;cnicas que describan mejor al producto"></textarea>
+          <textarea type="text" id="detalles" name="detalles" row="6" class="md-textarea" placeholder="Ej. Caracter&iacute;sticas t&eacute;cnicas que describan mejor al servicio"></textarea>
           <label class="col-lg-6" for="detalles" data-error="Error">Especificaciones técnicas</label>
         </div>
         <div class="col-lg-6 md-form">
@@ -117,7 +117,7 @@
           <label class="col-lg-12" for="terminosCondiciones" data-error="Error">Terminos y condiciones</label>
         </div>
       </div>
-      <div class="tab-pane fade in" id="multimediaProducto" role="tabpanel">
+      <div class="tab-pane fade in" id="multimediaServicio" role="tabpanel">
         <div class="row" style="min-height: 96px;">            
           <div class="col-2">
             <div class="file-field">
@@ -141,10 +141,10 @@
       <hr>
       <div class="row">
         <div class="col-md-6">
-          <a class="btn btn-default jqCancelar" href="{{route('productos')}}"> Regresar a la tabla</a>
+          <a class="btn btn-default jqCancelar" href="{{route('servicios')}}"> Regresar a la tabla</a>
         </div>
         <div class="col-md-6">
-          <a class="btn btn-primary jqGuardarProducto pull-right"> Guardar producto</a>
+          <a class="btn btn-primary jqGuardarServicio pull-right"> Guardar servicio</a>
         </div>  
       </div>
     </div>
@@ -154,5 +154,5 @@
 
 @endsection
 @section('scripts')
-<script type="text/javascript" src="{{ asset('js/app/productos/agregar.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/app/servicios/agregarServicio.js') }}"></script>
 @endsection

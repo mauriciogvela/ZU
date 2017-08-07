@@ -6,7 +6,7 @@
 			<th>C&oacute;digo</th>
 			<th>Producto</th>
 			<th>Categoria</th>
-			<th>Stock</th>
+			<th>Inventario</th>
 			<th class="text-md-center">Acciones</th>
 		</tr>
 	</thead>
@@ -23,7 +23,7 @@
 			    	<td>{{ $producto->categoria }}</td>
 			    	<td>{{ $producto->stock }}</td>
 			    	<td class="text-md-center">
-						<a class="amber-text" title="Editar producto" href="{{url('inventario/editar/'.$producto->id)}}"><i class="fa fa-pencil"></i></a>
+						<a class="amber-text" title="Editar producto" href="{{url('productos/editar/'.$producto->id)}}"><i class="fa fa-pencil"></i></a>
 						<a class="blue-text" title="Ver uso de stock"><i class="fa fa-calendar"></i></a>
 						<a class="red-text jqEliminarProducto" title="Borrar producto"><i class="fa fa-times"></i></a>
 						<!--a class="{{ ($producto->visibleWeb==1)?'green':'grey'}}-text-icon jqVisibleProducto" title="{{ ($producto->visibleWeb==1)?'Hacer invisible':'Hacer visible'}}"><i class="fa fa-eye"></i></a-->

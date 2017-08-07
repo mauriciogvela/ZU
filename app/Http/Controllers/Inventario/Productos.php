@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Producto;
-use App\Models\CategoriaProducto;
+use App\Models\Categoria;
 
 use Image;
 
@@ -23,7 +23,7 @@ class Productos extends Controller
     }
     public function index(){
         $user = new User();
-        $categorias = new CategoriaProducto();
+        $categorias = new Categoria();
         $categorias = $categorias->all();
         $user = $user->find($this->user);
 
@@ -32,10 +32,10 @@ class Productos extends Controller
             'categorias' => $categorias,
         ]);
     }
-    public function productosProveedor(Request $request)
+    public function consultarProductos(Request $request)
     {
         
-        $categoria = new CategoriaProducto();
+        $categoria = new Categoria();
 
         $idCategoria = $request->input('idCategoria');
         $busqueda = $request->input('busqueda');
@@ -66,7 +66,7 @@ class Productos extends Controller
     public function add($id='')
     {
         $user = new User();
-        $categorias = new CategoriaProducto();
+        $categorias = new Categoria();
 
         $user = $user->find($this->user);
         $categorias = $categorias->all();
@@ -104,10 +104,10 @@ class Productos extends Controller
             //faltan validaciones sobre la actualizacion del producto
             // * ¿Se podra modificar si existe en algun pedido existente?
             $this->producto = $this->producto->where('idProveedor', $this->user)->find($request->input('id'));
-            $msj='Producto editado';
+            $msj='producto editado';
         }else{
             $this->producto->idProveedor = $this->user;
-            $msj='Producto agregado';
+            $msj='producto agregado';
         }
         $producto = $this->producto->fill($request->all());
         //guardado del producto

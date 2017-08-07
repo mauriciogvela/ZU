@@ -16,56 +16,43 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa  fa-desktop"></i>Equipos<i class="fa fa-angle-down rotate-icon"></i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#" class="waves-effect">Alta</a>
-                                </li>
-                                <li><a href="#" class="waves-effect">Administración</a>
-
-                            </ul>
-                        </div>
+                    <li>
+                        <a class="waves-effect" href="{{ route('perfil') }}">
+                            <i class="fa fa-user"></i> Mi perfil
+                        </a>
                     </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-gift"></i>Paquetes<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-list-ul"></i>Inventario<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#" class="waves-effect">Alta</a>
+                                <li><a href="{{ route('productos') }}" class="waves-effect">Productos</a>
                                 </li>
-                                <li><a href="#" class="waves-effect">Administración</a>
+                                <li><a href="{{ route('servicios') }}" class="waves-effect">Servicios</a>
                                 </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-truck"></i>Rentas<i class="fa fa-angle-down rotate-icon"></i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#" class="waves-effect">En curso</a>
-                                </li>
-                                <li><a href="#" class="waves-effect">Histórico</a>
+                                <li><a href="{{ route('paquetes') }}" class="waves-effect">Paquetes</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope"></i> Notificaciones<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-gear"></i>Administración<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#" class="waves-effect">Mensajes</a>
+                                <li><a href="{{ route('reportes') }}" class="waves-effect">Reportes</a>
                                 </li>
-
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-o"></i> Facturas<i class="fa fa-angle-down rotate-icon"></i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#" class="waves-effect">Facturas emitidas</a>
-                                </li>
-                                <li><a href="#" class="waves-effect">Recibos</a>
+                                <li><a href="{{ route('pagos') }}" class="waves-effect">Solicitud de pagos</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope"></i>Comunicación<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="{{ route('notificaciones') }}" class="waves-effect">Notificaciones</a>
+                                </li>
+                                <li><a href="{{ route('comentarios') }}" class="waves-effect">Comentarios</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </li>
             <!--/. Side navigation links -->

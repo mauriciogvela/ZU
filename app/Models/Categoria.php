@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoriaProducto extends Model
+class Categoria extends Model
 {
 
     protected $table = 'cat_categorias';
@@ -12,6 +12,10 @@ class CategoriaProducto extends Model
     public function productos()
     {
         return $this->hasMany('App\Producto');
+    }
+    public function servicios()
+    {
+        return $this->hasMany('App\Servicio');
     }
 
 }

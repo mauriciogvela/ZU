@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Producto extends Model
+class Servicio extends Model
 {
 
 	use SoftDeletes;
 	protected $dates = ['fechaEliminacion'];
-    protected $table = 'productos';
+    protected $table = 'servicios';
 
     const CREATED_AT = 'fechaCreacion';
     const UPDATED_AT = 'fechaActualizacion';
@@ -18,7 +18,7 @@ class Producto extends Model
 
 
     protected $fillable = [
-        'idProveedor', 'idCategoria', 'codigo', 'nombre', 'descripcion', 'existencia', 'capacidad', 'cantidadMinima', 'precioUnitario', 'visibilidad', 'detalles', 'terminosCondiciones', 'fechaAutorizacion'
+        'idProveedor', 'idCategoria', 'codigo', 'nombre', 'descripcion', 'existencia', 'capacidad', 'cantidadMinima', 'tiempoMinimo', 'precioUnitario', 'precioHora', 'visibilidad', 'detalles', 'terminosCondiciones', 'fechaAutorizacion'
     ];
 
     public function categoria()
