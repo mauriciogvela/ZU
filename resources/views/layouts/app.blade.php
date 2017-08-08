@@ -44,6 +44,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Iniciar sesión</a></li>
+                            <li><a href="{{ route('loginfacebook') }}">Facebook</a></li>
                             <li><a href="{{ route('register') }}">Registro</a></li>
                         @else
                             <li class="dropdown">
